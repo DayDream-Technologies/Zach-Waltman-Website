@@ -1,0 +1,9 @@
+{
+  "name": "zwf-create-checkout-session",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.4",
+    "stripe": "^17.4.0"
+  }
+}

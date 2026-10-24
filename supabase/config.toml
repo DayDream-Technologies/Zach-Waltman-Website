@@ -1,0 +1,9 @@
+project_id = "zach-waltman-foundation"
+
+# Stripe cannot send a Supabase JWT. The function verifies the Stripe signature instead.
+[functions.stripe-webhook]
+verify_jwt = false
+
+# Called by the webhook with the service-role key. The function also checks the JWT role.
+[functions.send-receipt]
+verify_jwt = true

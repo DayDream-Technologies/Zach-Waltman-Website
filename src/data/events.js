@@ -1,0 +1,50 @@
+export const events = [
+  {
+    id: 'sample-skate',
+    title: 'Memorial skate',
+    summary: 'A sample community skate. This date is not scheduled. It is here so the page has a shape until the family sets a real one.',
+    location: 'Wilmette, Illinois',
+    start: '2026-11-21T18:00:00-06:00',
+    end: '2026-11-21T20:00:00-06:00',
+    category: 'memorial',
+    sample: true,
+  },
+  {
+    id: 'sample-msu',
+    title: 'Campus awareness night',
+    summary: 'A sample evening of conversation and resource sharing on a college campus. Not yet confirmed with any university.',
+    location: 'East Lansing, Michigan',
+    start: '2027-01-28T19:00:00-05:00',
+    end: '2027-01-28T21:00:00-05:00',
+    category: 'campus',
+    sample: true,
+  },
+  {
+    id: 'sample-5k',
+    title: '5K for safe spaces',
+    summary: 'A sample fundraiser. Route, charity partner, and registration are all still to be decided.',
+    location: 'Chicago, Illinois',
+    start: '2027-04-18T08:00:00-05:00',
+    end: '2027-04-18T11:00:00-05:00',
+    category: 'fundraiser',
+    sample: true,
+  },
+  {
+    id: 'sample-gathering',
+    title: 'Community gathering',
+    summary: 'A sample past gathering, included so the archive view has something to show. This event did not take place.',
+    location: 'Glenview, Illinois',
+    start: '2026-10-04T14:00:00-05:00',
+    end: '2026-10-04T16:00:00-05:00',
+    category: 'community',
+    sample: true,
+  },
+];
+
+export const eventCategories = [
+  { id: 'all', label: 'All' },
+  { id: 'memorial', label: 'Memorial' },
+  { id: 'campus', label: 'Campus' },
+  { id: 'fundraiser', label: 'Fundraiser' },
+  { id: 'community', label: 'Community' },
+];
