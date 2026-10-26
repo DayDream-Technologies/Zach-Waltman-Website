@@ -54,7 +54,7 @@ export default function Navbar() {
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
           {navLinks.map((link) => (
-            <NavLink key={link.to} to={link.to} className={linkClass}>
+            <NavLink key={link.to} to={link.to} end={link.end} className={linkClass}>
               {link.label}
             </NavLink>
           ))}
@@ -88,7 +88,7 @@ export default function Navbar() {
           >
             <div className="container-page flex flex-col gap-1 py-4">
               {navLinks.map((link) => (
-                <NavLink key={link.to} to={link.to} className={linkClass}>
+                <NavLink key={link.to} to={link.to} end={link.end} className={linkClass}>
                   {link.label}
                 </NavLink>
               ))}

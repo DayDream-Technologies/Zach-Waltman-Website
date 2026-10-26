@@ -8,11 +8,12 @@ export const site = {
     'The Zach Waltman Foundation intends to establish 24/7 fully staffed on-campus safe spaces for students. We aspire to create a more responsive and compassionate system of providing care and access for students seeking mental health support. Through collaboration, advocacy, and education, we will strengthen coordination among campus services and health care providers, ensuring that every young person is seen, heard, supported, and connected to the care they need.',
   gofundme:
     'https://www.gofundme.com/f/zach-waltman-mental-health-crisis-campus-suicide-prevention',
-  email: null,
+  email: 'ZachWaltmanFoundation@gmail.com',
   phone: null,
 };
 
 export const navLinks = [
+  { to: '/', label: 'Home', end: true },
   { to: '/about', label: 'About' },
   { to: '/zachs-story', label: "Zach's Story" },
   { to: '/resources', label: 'Resources' },

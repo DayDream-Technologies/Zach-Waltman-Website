@@ -5,6 +5,7 @@ import Field from '../components/Field.jsx';
 import PageHero from '../components/PageHero.jsx';
 import PlaceholderNote from '../components/PlaceholderNote.jsx';
 import usePageTitle from '../hooks/usePageTitle.js';
+import { site } from '../data/site.js';
 import { siteUrl } from '../lib/publicUrl.js';
 
 const tabs = [
@@ -158,7 +159,7 @@ export default function GetInvolved() {
               {tab === 'corporate' ? (
                 <InfoPanel
                   title="Corporate partners"
-                  body="Matching gifts, sponsored trainings, and in-kind clinical or legal help will matter more than a logo on a banner. There is no partnership deck yet. A company that wants to talk should wait for a published email, or leave a note through the volunteer form in the meantime, knowing it is not delivered yet."
+                  body={`Matching gifts, sponsored trainings, and in-kind clinical or legal help will matter more than a logo on a banner. There is no partnership deck yet. A company that wants to talk can email the family at ${site.email}. The volunteer form on this page is not delivered yet.`}
                 />
               ) : null}
               {tab === 'share' ? (

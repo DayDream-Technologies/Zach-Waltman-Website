@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import Accordion from '../components/Accordion.jsx';
-import HockeyStickDivider from '../components/HockeyStickDivider.jsx';
 import PageHero from '../components/PageHero.jsx';
 import PlaceholderNote from '../components/PlaceholderNote.jsx';
 import Reveal from '../components/Reveal.jsx';
@@ -84,8 +83,6 @@ export default function About() {
           ))}
         </div>
       </section>
-
-      <HockeyStickDivider className="container-page" />
 
       <section className="container-page py-16">
         <SectionHeading eyebrow="People" title="The board is not named yet.">

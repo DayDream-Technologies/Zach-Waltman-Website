@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Check, Heart } from 'lucide-react';
+import { Heart } from 'lucide-react';
 import Field from '../components/Field.jsx';
 import PageHero from '../components/PageHero.jsx';
 import PlaceholderNote from '../components/PlaceholderNote.jsx';
@@ -34,8 +34,6 @@ function parseDollars(value) {
   return dollars * 100 + cents;
 }
 
-const emptyGrant = { name: '', email: '', organization: '', message: '' };
-
 export default function Donate() {
   usePageTitle('Donate');
   const [params] = useSearchParams();
@@ -52,9 +50,6 @@ export default function Donate() {
   const [submitting, setSubmitting] = useState(false);
   const [fallback, setFallback] = useState(false);
   const [serverError, setServerError] = useState('');
-  const [grant, setGrant] = useState(emptyGrant);
-  const [grantErrors, setGrantErrors] = useState({});
-  const [grantSaved, setGrantSaved] = useState(false);
 
   const giftCents = useCustom ? parseDollars(custom) : preset;
   const coveredChargeCents = estimateChargeCents(giftCents);
@@ -70,7 +65,7 @@ export default function Donate() {
     if (!name.trim() || name.trim().length < 2) next.name = 'Please add the name for the receipt.';
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) next.email = 'Enter the email that should receive the receipt.';
     if (giftCents < MIN_GIFT_CENTS) next.amount = 'The minimum gift is $5.';
-    if (giftCents > MAX_GIFT_CENTS) next.amount = 'For a gift over $100,000, use the grant path below so staff can help.';
+    if (giftCents > MAX_GIFT_CENTS) next.amount = `For a gift over $100,000, email the family at ${site.email}.`;
     return next;
   }
 
@@ -98,18 +93,6 @@ export default function Donate() {
       setServerError(error.message || 'Could not start checkout.');
       setSubmitting(false);
     }
-  }
-
-  function onGrant(event) {
-    event.preventDefault();
-    const next = {};
-    if (grant.name.trim().length < 2) next.name = 'Please add your name.';
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(grant.email)) next.email = 'Enter a valid email.';
-    if (grant.organization.trim().length < 2) next.organization = 'Name the fund, foundation, or company.';
-    if (grant.message.trim().length < 10) next.message = 'Add a short note about the gift.';
-    setGrantErrors(next);
-    if (Object.keys(next).length) return;
-    setGrantSaved(true);
   }
 
   return (
@@ -287,38 +270,19 @@ export default function Donate() {
       </section>
 
       <section className="bg-white py-14">
-        <div className="container-page grid gap-8 lg:grid-cols-2">
-          <div>
-            <h2 className="font-display text-3xl font-semibold">Donor-advised funds and grants</h2>
-            <p className="mt-3 text-sm leading-relaxed text-evergreen-800">
-              A gift from a donor-advised fund or a foundation should not go through the card form, and it should not receive a personal tax receipt. Tell us who is recommending the grant. Staff will record it by hand. This note is not delivered yet.
-            </p>
-            <PlaceholderNote>Staff-recorded grant path, not card checkout.</PlaceholderNote>
-          </div>
-          {grantSaved ? (
-            <div className="card flex items-start gap-3 p-6" role="status">
-              <Check className="mt-1 h-5 w-5 text-evergreen-800" />
-              <p className="text-sm leading-relaxed text-evergreen-800">
-                The note looks complete. It stayed in this browser. Email the foundation directly once a public address is published, or give through the GoFundMe in the meantime.
-              </p>
-            </div>
-          ) : (
-            <form className="card space-y-4 p-6" onSubmit={onGrant} noValidate>
-              <Field id="grant-name" label="Your name" error={grantErrors.name}>
-                <input id="grant-name" className={`field-input ${grantErrors.name ? 'field-input-error' : ''}`} value={grant.name} onChange={(event) => setGrant({ ...grant, name: event.target.value })} />
-              </Field>
-              <Field id="grant-email" label="Email" error={grantErrors.email}>
-                <input id="grant-email" type="email" className={`field-input ${grantErrors.email ? 'field-input-error' : ''}`} value={grant.email} onChange={(event) => setGrant({ ...grant, email: event.target.value })} />
-              </Field>
-              <Field id="grant-org" label="Fund or foundation" error={grantErrors.organization}>
-                <input id="grant-org" className={`field-input ${grantErrors.organization ? 'field-input-error' : ''}`} value={grant.organization} onChange={(event) => setGrant({ ...grant, organization: event.target.value })} />
-              </Field>
-              <Field id="grant-message" label="Note" error={grantErrors.message}>
-                <textarea id="grant-message" rows={4} className={`field-input ${grantErrors.message ? 'field-input-error' : ''}`} value={grant.message} onChange={(event) => setGrant({ ...grant, message: event.target.value })} />
-              </Field>
-              <button type="submit" className="btn-primary">Check this note</button>
-            </form>
-          )}
+        <div className="container-page max-w-3xl">
+          <h2 className="font-display text-3xl font-semibold">Donor-advised funds and gifts of stock</h2>
+          <p className="mt-3 text-sm leading-relaxed text-evergreen-800">
+            A gift from a donor-advised fund, or a donation of stock, should not go through the card form, and it should not receive a personal tax receipt from this page. Donor-advised fund and stock donors should contact the family directly. They will share how to send the gift.
+          </p>
+          <p className="mt-4">
+            <a
+              className="font-semibold text-evergreen-900 underline decoration-evergreen-300 underline-offset-4"
+              href={`mailto:${site.email}`}
+            >
+              {site.email}
+            </a>
+          </p>
         </div>
       </section>
     </>

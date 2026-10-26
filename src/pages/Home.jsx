@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Clock, HeartHandshake, Phone } from 'lucide-react';
 import AnimatedCounter from '../components/AnimatedCounter.jsx';
-import { HockeyStick } from '../components/HockeyStickDivider.jsx';
-import HockeyStickDivider from '../components/HockeyStickDivider.jsx';
 import PlaceholderNote from '../components/PlaceholderNote.jsx';
 import Reveal from '../components/Reveal.jsx';
 import SectionHeading from '../components/SectionHeading.jsx';
@@ -55,20 +53,15 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="relative mx-auto w-full max-w-md">
-            <div className="card relative overflow-hidden p-6 sm:p-8">
-              <HockeyStick animate className="absolute -right-2 top-4 h-48 w-16 text-evergreen-800" />
-              <img src={publicUrl('logo.png')} alt="Zach Waltman Foundation" className="relative w-full" />
+          <div className="mx-auto w-full max-w-md">
+            <div className="card p-6 sm:p-8">
+              <img src={publicUrl('logo.png')} alt="Zach Waltman Foundation" className="w-full" />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="container-page py-8">
-        <HockeyStickDivider />
-      </section>
-
-      <section className="container-page pb-20">
+      <section className="container-page pb-20 pt-4">
         <div className="grid gap-5 md:grid-cols-3">
           {pillars.map((pillar, index) => {
             const Icon = pillarIcons[index];

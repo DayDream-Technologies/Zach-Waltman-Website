@@ -64,14 +64,19 @@ export default function Footer() {
               </li>
             ) : null}
           </ul>
-          <p className="mt-6 text-sm text-evergreen-200/80">
-            Social accounts and a public email address are not set up yet.
+          <p className="mt-6 text-sm">
+            <a className="hover:text-white" href={`mailto:${site.email}`}>
+              {site.email}
+            </a>
+          </p>
+          <p className="mt-3 text-sm text-evergreen-200/80">
+            Social accounts are not set up yet.
           </p>
         </div>
       </div>
       <div className="border-t border-white/10">
         <p className="container-page py-5 text-xs text-evergreen-200/80">
-          © {year} {site.name}. In memory of Zachary Waltman, number {site.number}.
+          © {year} {site.name}. In memory of Zachary Waltman.
           {' '}This site does not provide therapy or emergency care.
         </p>
       </div>

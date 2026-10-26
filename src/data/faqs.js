@@ -1,3 +1,5 @@
+import { site } from './site.js';
+
 export const faqs = [
   {
     q: 'Who is the foundation for?',
@@ -17,7 +19,7 @@ export const faqs = [
   },
   {
     q: 'Can my campus partner with you?',
-    a: 'Yes, that is the work. Use the Get Involved page to tell us who you are. The form on this site does not send yet, so if you need a reply now, use the contact path the family shares once an email address is published.',
+    a: `Yes, that is the work. Use the Get Involved page to tell us who you are. The form on this site does not send yet, so if you need a reply now, email the family at ${site.email}.`,
   },
   {
     q: 'How should we talk about Zach?',
