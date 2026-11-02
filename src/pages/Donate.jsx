@@ -163,13 +163,13 @@ export default function Donate() {
 
             <fieldset>
               <legend className="text-sm font-medium text-evergreen-900">Frequency</legend>
-              <div className="mt-3 inline-flex rounded-full bg-cream p-1" role="group">
+              <div className="mt-3 grid grid-cols-3 gap-2" role="group">
                 {frequencies.map((item) => (
                   <button
                     key={item.id}
                     type="button"
-                    className={`rounded-full px-4 py-2 text-sm font-semibold ${
-                      frequency === item.id ? 'bg-evergreen-800 text-white' : 'text-evergreen-800'
+                    className={`min-h-11 whitespace-nowrap rounded-full px-2 text-sm font-semibold ${
+                      frequency === item.id ? 'bg-evergreen-800 text-white' : 'bg-cream text-evergreen-800'
                     }`}
                     aria-pressed={frequency === item.id}
                     onClick={() => setFrequency(item.id)}
@@ -196,7 +196,7 @@ export default function Donate() {
             <label className="flex items-start gap-3 text-sm text-evergreen-800">
               <input
                 type="checkbox"
-                className="mt-1"
+                className="field-check"
                 checked={coverFees}
                 onChange={(event) => setCoverFees(event.target.checked)}
               />
@@ -277,7 +277,7 @@ export default function Donate() {
           </p>
           <p className="mt-4">
             <a
-              className="font-semibold text-evergreen-900 underline decoration-evergreen-300 underline-offset-4"
+              className="break-all font-semibold text-evergreen-900 underline decoration-evergreen-300 underline-offset-4"
               href={`mailto:${site.email}`}
             >
               {site.email}

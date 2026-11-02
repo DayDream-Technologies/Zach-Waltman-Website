@@ -10,6 +10,25 @@ import { storyTimeline } from '../data/faqs.js';
 
 const emptyMemory = { name: '', email: '', memory: '', share: false };
 
+const rememberedQuotes = [
+  'He lit up every room he entered',
+  'I wouldn’t be the person I am today without Zach',
+  'One of the best people I have ever met in my life',
+  'The guy who would chew me out for not going out',
+  'He was the guy who would make me laugh even when I was trying my hardest not to',
+  'He had an impact on me like no other',
+  'He was my favorite neighborhood kid, always so polite and friendly',
+  'Zach was always looking for a loophole',
+  'A wonderful boy, kind, fun, hilarious, and a dear friend to my son',
+  'He left joy with everyone he met',
+  'I love how cheerful and passionate he was',
+  'I’ll never meet anyone like Zach the rest of my life, I’m forever grateful he came into my life',
+  'He was the most perfect person and one of my favorites I have ever met',
+  'Zach embodies the person all parents wish for. He was funny, kind, outgoing, and knew how to make good out of every bad',
+  'He was such a special person who brought so much light to the lives of others',
+  'His presence made a difference, and the love and memories he leaves behind will stay with us always',
+];
+
 export default function ZachsStory() {
   usePageTitle("Zach's Story");
   const [memory, setMemory] = useState(emptyMemory);
@@ -75,7 +94,6 @@ export default function ZachsStory() {
             <p className="mt-6 leading-relaxed text-evergreen-800">
               They wrote that they want to carry his spirit of teamwork, strength, and caring for others forward, by making mental-health and suicide-prevention resources available to college students 24 hours a day, 7 days a week.
             </p>
-            <PlaceholderNote>More quotes, once the family chooses them.</PlaceholderNote>
           </div>
           <div>
             <h2 className="font-display text-3xl font-semibold">Photographs</h2>
@@ -95,6 +113,16 @@ export default function ZachsStory() {
             </div>
           </div>
         </div>
+        <div className="container-page">
+          <h3 className="mt-14 font-display text-2xl font-semibold">From people who knew him</h3>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {rememberedQuotes.map((quote) => (
+              <figure key={quote} className="card border-l-4 border-l-evergreen-800 p-5">
+                <blockquote className="leading-relaxed text-evergreen-950">“{quote}”</blockquote>
+              </figure>
+            ))}
+          </div>
+        </div>
       </section>
 
       <section className="container-page py-16">
@@ -102,7 +130,7 @@ export default function ZachsStory() {
           <div>
             <h2 className="font-display text-3xl font-semibold">Share a memory</h2>
             <p className="mt-3 leading-relaxed text-evergreen-800">
-              If you knew Zach, the family would like to hear it. This form does not send yet. Nothing you type leaves this browser.
+              If you have any memories you would like to share with Zach’s family, submit here.
             </p>
             <PlaceholderNote>Needs a private inbox before it can send.</PlaceholderNote>
           </div>
@@ -138,7 +166,7 @@ export default function ZachsStory() {
                 <textarea id="memory-body" name="memory" rows={5} className={`field-input ${errors.memory ? 'field-input-error' : ''}`} value={memory.memory} onChange={update} />
               </Field>
               <label className="flex items-start gap-3 text-sm text-evergreen-800">
-                <input type="checkbox" name="share" checked={memory.share} onChange={update} className="mt-1" />
+                <input type="checkbox" name="share" checked={memory.share} onChange={update} className="field-check" />
                 The family may share this on the site later, with my name. Leave this unchecked to keep it private.
               </label>
               <button type="submit" className="btn-primary">Save on this page</button>

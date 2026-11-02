@@ -1,9 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Clock, HeartHandshake, Phone } from 'lucide-react';
-import AnimatedCounter from '../components/AnimatedCounter.jsx';
-import PlaceholderNote from '../components/PlaceholderNote.jsx';
 import Reveal from '../components/Reveal.jsx';
-import SectionHeading from '../components/SectionHeading.jsx';
 import usePageTitle from '../hooks/usePageTitle.js';
 import { events } from '../data/events.js';
 import { pillars, site } from '../data/site.js';
@@ -33,29 +30,35 @@ export default function Home() {
         </p>
         <div className="container-page grid items-center gap-10 py-16 lg:grid-cols-[1.15fr_0.85fr] lg:py-24">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-evergreen-600">
-              Mental health crisis support for students
-            </p>
-            <h1 className="mt-4 max-w-xl font-display text-5xl font-semibold leading-[1.05] text-evergreen-950 sm:text-6xl">
-              Seen, heard, and never alone.
+            <h1 className="max-w-xl font-display text-4xl font-semibold leading-[1.05] text-evergreen-950 sm:text-6xl">
+              <span className="block">Immediate Support</span>
+              <span className="block">Coordinated Care</span>
+              <span className="block">A Safe Place</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-evergreen-800">
-              {site.mission}
+              {site.mission} {site.now}
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/donate" className="btn-primary">
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <a href="tel:988" className="btn-primary px-8 py-4 text-lg">
+                <Phone className="h-5 w-5" />
+                Need help now
+              </a>
+              <Link to="/donate" className="btn-secondary">
                 Donate
                 <ArrowRight className="h-4 w-4" />
               </Link>
-              <a href="tel:988" className="btn-secondary">
-                <Phone className="h-4 w-4" />
-                Get help now
-              </a>
             </div>
           </div>
           <div className="mx-auto w-full max-w-md">
             <div className="card p-6 sm:p-8">
-              <img src={publicUrl('logo.png')} alt="Zach Waltman Foundation" className="w-full" />
+              <img
+                src={publicUrl('logo.png')}
+                alt="Zach Waltman Foundation"
+                width={1024}
+                height={1024}
+                fetchPriority="high"
+                className="h-auto w-full"
+              />
             </div>
           </div>
         </div>
@@ -81,43 +84,17 @@ export default function Home() {
       </section>
 
       <section className="bg-white py-20">
-        <div className="container-page grid gap-12 lg:grid-cols-2">
-          <div>
-            <SectionHeading eyebrow="Mission" title="Immediate help, then a real handoff.">
-              {site.mission}
-            </SectionHeading>
-          </div>
-          <Reveal delay={0.1}>
+        <div className="container-page">
+          <Reveal>
             <div className="rounded-3xl bg-evergreen-800 p-8 text-cream shadow-card">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-evergreen-200">Vision</p>
-              <p className="mt-4 text-base leading-relaxed text-white">{site.vision}</p>
+              <p className="mt-4 max-w-3xl text-base leading-relaxed text-white">{site.vision}</p>
               <Link to="/about" className="btn-light mt-8">
                 About the foundation
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </Reveal>
-        </div>
-      </section>
-
-      <section className="container-page py-20">
-        <SectionHeading eyebrow="The promise" title="What the number on the logo stands for.">
-          These are not results. Programs have not launched, and we will not invent a count of students helped. The figures below are the aim, and the number he wore.
-        </SectionHeading>
-        <PlaceholderNote>Replace with measured impact once programs are running.</PlaceholderNote>
-        <div className="mt-8 grid gap-5 sm:grid-cols-3">
-          {[
-            { value: 24, suffix: '/7', label: 'Hours we want a safe space staffed' },
-            { value: 1, suffix: '', label: 'Student, seen all the way through to care' },
-            { value: 84, suffix: '', label: 'The number on Zach’s jersey' },
-          ].map((item) => (
-            <div key={item.label} className="card p-6">
-              <p className="font-display text-5xl font-semibold text-evergreen-800">
-                <AnimatedCounter value={item.value} suffix={item.suffix} />
-              </p>
-              <p className="mt-3 text-sm text-evergreen-800">{item.label}</p>
-            </div>
-          ))}
         </div>
       </section>
 
@@ -128,7 +105,7 @@ export default function Home() {
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-evergreen-600">Zach’s story</p>
               <h2 className="mt-3 font-display text-3xl font-semibold">A brother, a teammate, a friend.</h2>
               <p className="mt-4 leading-relaxed text-evergreen-800">
-                Zach Waltman grew up in Wilmette, played hockey at Loyola Academy, and studied finance at Michigan State. His family is building this foundation so another student has somewhere to turn.
+                Zach Waltman grew up in Wilmette, played hockey at Loyola Academy, and studied finance at Michigan State. Our family is building this foundation so another student has somewhere to turn.
               </p>
               <Link to="/zachs-story" className="btn-secondary mt-6">
                 Read his story
@@ -145,10 +122,10 @@ export default function Home() {
               <p className="mt-4 leading-relaxed text-evergreen-800">
                 {upcoming
                   ? upcoming.summary
-                  : 'Real dates will be posted when the family schedules them.'}
+                  : 'Real dates will be posted when our family schedules them.'}
               </p>
               <Link to="/events" className="btn-secondary mt-6">
-                See the calendar
+                See our event calendar
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </article>
@@ -160,11 +137,8 @@ export default function Home() {
         <div className="overflow-hidden rounded-[2rem] bg-evergreen-900 px-8 py-12 text-cream sm:px-12">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-evergreen-200">Give</p>
           <h2 className="mt-3 max-w-2xl font-display text-4xl font-semibold text-white">
-            Help build a place a student can go tonight.
+            Support the mission. Help build a place a student can go 24/7.
           </h2>
-          <p className="mt-4 max-w-2xl text-evergreen-100">
-            Direct card gifts on this site are being wired to Stripe. Until that is live, the family’s GoFundMe is the way to give.
-          </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link to="/donate" className="btn-light">
               Donate

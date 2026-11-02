@@ -48,7 +48,9 @@ export default function Navbar() {
           <img
             src={publicUrl('logo.png')}
             alt=""
-            className={`w-auto object-contain transition-all ${scrolled ? 'h-12' : 'h-16'}`}
+            width={1024}
+            height={1024}
+            className={`w-auto object-contain transition-all ${scrolled ? 'h-10 sm:h-12' : 'h-12 sm:h-16'}`}
           />
         </Link>
 
@@ -65,7 +67,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="rounded-full p-2 text-evergreen-900 hover:bg-evergreen-50 lg:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full text-evergreen-900 hover:bg-evergreen-50 lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((value) => !value)}
@@ -88,7 +90,16 @@ export default function Navbar() {
           >
             <div className="container-page flex flex-col gap-1 py-4">
               {navLinks.map((link) => (
-                <NavLink key={link.to} to={link.to} end={link.end} className={linkClass}>
+                <NavLink
+                  key={link.to}
+                  to={link.to}
+                  end={link.end}
+                  className={({ isActive }) =>
+                    `flex min-h-11 items-center rounded-full px-3 text-base font-medium ${
+                      isActive ? 'bg-evergreen-50 text-evergreen-900' : 'text-evergreen-800 hover:bg-evergreen-50'
+                    }`
+                  }
+                >
                   {link.label}
                 </NavLink>
               ))}

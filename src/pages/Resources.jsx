@@ -1,12 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { ExternalLink, Search, Wind } from 'lucide-react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
-import Accordion from '../components/Accordion.jsx';
 import CognitionDailySearch from '../components/CognitionDailySearch.jsx';
 import PageHero from '../components/PageHero.jsx';
-import PlaceholderNote from '../components/PlaceholderNote.jsx';
 import usePageTitle from '../hooks/usePageTitle.js';
-import { audiences, helpAFriend, library, resourceTypes } from '../data/resources.js';
+import { audiences, library, resourceTypes } from '../data/resources.js';
 import { crisisLines } from '../data/site.js';
 import { publicUrl } from '../lib/publicUrl.js';
 
@@ -93,11 +91,7 @@ export default function Resources() {
 
   return (
     <>
-      <PageHero eyebrow="Resources" title="Help that is open, and help we are still writing.">
-        <p>
-          If you need someone now, start with the lines below. The library under them mixes national organizations with draft guides. Drafts are marked, and a clinician still needs to review them.
-        </p>
-      </PageHero>
+      <PageHero title="Resources" />
 
       <section className="container-page py-12" aria-labelledby="now-heading">
         <h2 id="now-heading" className="font-display text-3xl font-semibold">If you need help now</h2>
@@ -127,9 +121,8 @@ export default function Resources() {
             <div>
               <h2 className="font-display text-3xl font-semibold">Resource library</h2>
               <p className="mt-2 max-w-xl text-sm text-evergreen-700">
-                Search by word, or filter by who it is for. Campus-specific numbers will be added as partnerships are real.
+                Search by word, or filter by who it is for.
               </p>
-              <PlaceholderNote>Clinical review of every draft guide.</PlaceholderNote>
             </div>
           </div>
 
@@ -150,7 +143,7 @@ export default function Resources() {
                   key={item.id}
                   type="button"
                   onClick={() => setAudience(item.id)}
-                  className={`rounded-full px-3 py-1.5 text-sm font-medium ${
+                  className={`chip ${
                     audience === item.id ? 'bg-evergreen-800 text-white' : 'bg-cream text-evergreen-800 hover:bg-evergreen-50'
                   }`}
                   aria-pressed={audience === item.id}
@@ -165,7 +158,7 @@ export default function Resources() {
                   key={item.id}
                   type="button"
                   onClick={() => setType(item.id)}
-                  className={`rounded-full px-3 py-1.5 text-sm ${
+                  className={`chip ${
                     type === item.id ? 'bg-evergreen-100 text-evergreen-950' : 'text-evergreen-700 hover:bg-evergreen-50'
                   }`}
                   aria-pressed={type === item.id}
@@ -219,16 +212,9 @@ export default function Resources() {
         </div>
       </section>
 
-      <section className="container-page grid gap-8 py-16 lg:grid-cols-2">
-        <BreathingWidget />
-        <div id="help-a-friend">
-          <h2 className="font-display text-3xl font-semibold">How to help a friend</h2>
-          <p className="mt-3 text-sm leading-relaxed text-evergreen-700">
-            A draft for students. It is general guidance, not a clinical protocol, and it should be reviewed before the foundation treats it as final.
-          </p>
-          <div className="mt-5">
-            <Accordion items={helpAFriend} />
-          </div>
+      <section className="container-page py-16">
+        <div className="mx-auto max-w-xl">
+          <BreathingWidget />
         </div>
       </section>
     </>

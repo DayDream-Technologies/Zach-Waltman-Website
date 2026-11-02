@@ -4,17 +4,24 @@ export const audiences = [
   { id: 'friends', label: 'Friends' },
   { id: 'parents', label: 'Parents' },
   { id: 'athletes', label: 'Athletes' },
-  { id: 'campuses', label: 'Campuses' },
 ];
 
 export const resourceTypes = [
   { id: 'all', label: 'All types' },
   { id: 'hotline', label: 'Hotlines' },
   { id: 'organization', label: 'Organizations' },
-  { id: 'guide', label: 'Guides' },
 ];
 
 export const library = [
+  {
+    id: 'msu-caps',
+    title: 'CAPS at Michigan State',
+    summary: 'Michigan State University Counseling and Psychological Services. Crisis counselors are available 24/7 at 517-355-8270, press 1. For an appointment, call the same number weekdays, 8 a.m. to 5 p.m.',
+    audience: 'students',
+    type: 'organization',
+    href: 'https://caps.msu.edu/',
+    draft: false,
+  },
   {
     id: '988-web',
     title: '988 Suicide & Crisis Lifeline',
@@ -87,44 +94,9 @@ export const library = [
     href: 'https://www.ncaa.org/sports/2021/2/9/mental-health.aspx',
     draft: false,
   },
-  {
-    id: 'campus-counseling',
-    title: 'Your campus counseling center',
-    summary: 'Most colleges list a counseling phone on the student-health site, plus an after-hours number. If you cannot find it, ask residence life or campus police to connect you. We will publish partner-campus numbers here as agreements are signed.',
-    audience: 'campuses',
-    type: 'guide',
-    href: null,
-    draft: true,
-  },
-  {
-    id: 'friend-guide',
-    title: 'When a friend is struggling',
-    summary: 'A short draft for students: ask directly, listen, stay if you are worried, and help them reach 988 or campus counseling. A clinician still needs to review this.',
-    audience: 'friends',
-    type: 'guide',
-    href: '/resources#help-a-friend',
-    draft: true,
-  },
-  {
-    id: 'parent-guide',
-    title: 'For parents of students away from home',
-    summary: 'Draft notes on staying in touch without taking over, knowing the campus counseling number, and what to do if your student goes quiet. Pending clinical review.',
-    audience: 'parents',
-    type: 'guide',
-    href: null,
-    draft: true,
-  },
-  {
-    id: 'teammate-guide',
-    title: 'For teammates',
-    summary: 'Draft notes on checking in after a hard loss or a hard week, and on telling a coach or counselor when you are worried. Pending clinical review.',
-    audience: 'athletes',
-    type: 'guide',
-    href: null,
-    draft: true,
-  },
 ];
 
+/** Not shown on the resources page. The copy is kept so the section can be added back. */
 export const helpAFriend = [
   {
     title: 'Ask directly, then listen',

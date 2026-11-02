@@ -8,23 +8,31 @@ import usePageTitle from '../hooks/usePageTitle.js';
 import { faqs } from '../data/faqs.js';
 import { boardSeats, careSteps, site, values } from '../data/site.js';
 
+/*
+  Introductions removed from the page. Put them back under the matching headings when ready.
+
+  About us: The foundation is new. The mission is not a slogan we are waiting to define. It is the sentence the family is organizing around, and the vision that follows it.
+
+  How care should move: This is the path we want every campus partner to be able to walk. It is a design, not a claim that the rooms are open.
+
+  Values: These are working values for a young organization. The board can revise them. They are not a brand exercise detached from the mission.
+
+  People: Seats are shown so the structure is visible. No names are invented here. Photos and biographies will replace these cards when the family is ready.
+*/
+
 export default function About() {
   usePageTitle('About us');
 
   return (
     <>
-      <PageHero eyebrow="About us" title="A more responsive system of care, built in Zach’s name.">
-        <p>
-          The foundation is new. The mission is not a slogan we are waiting to define. It is the sentence the family is organizing around, and the vision that follows it.
-        </p>
-      </PageHero>
+      <PageHero eyebrow="About us" title="A more responsive system of care, built in Zach’s name." />
 
       <section className="container-page grid gap-6 py-16 lg:grid-cols-2">
         <article className="card p-8">
           <h2 className="font-display text-sm font-semibold uppercase tracking-[0.18em] text-evergreen-600">
             Mission
           </h2>
-          <p className="mt-4 text-2xl font-medium leading-snug text-evergreen-950">{site.mission}</p>
+          <p className="mt-4 text-2xl font-medium leading-snug text-evergreen-950">{site.mission} {site.now}</p>
         </article>
         <article className="card bg-evergreen-800 p-8 text-cream">
           <h2 className="font-display text-sm font-semibold uppercase tracking-[0.18em] text-evergreen-200">
@@ -34,11 +42,26 @@ export default function About() {
         </article>
       </section>
 
+      <section className="container-page pb-4">
+        <h2 className="font-display text-3xl font-semibold text-evergreen-900">Why this work is urgent</h2>
+        <p className="mt-4 max-w-3xl leading-relaxed text-evergreen-800">
+          Suicide is the second leading cause of death for people ages 15 to 24 in the United States, and for people ages 25 to 34. In 2024, 5,915 people ages 15 to 24 and 7,993 people ages 25 to 34 died by suicide. Unintentional injury was the only cause ranked higher in those age groups.
+        </p>
+        <p className="mt-3 text-sm text-evergreen-700">
+          <a
+            className="font-semibold text-evergreen-900 underline decoration-evergreen-300 underline-offset-2"
+            href="https://mvpiccs-viz.cdc.gov/pdfs/leading-causes-of-death-by-age-group_2024_508.pdf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            CDC WISQARS, 10 leading causes of death, 2024
+          </a>
+        </p>
+      </section>
+
       <section className="bg-white py-16">
         <div className="container-page">
-          <SectionHeading eyebrow="How care should move" title="From a student, to a person, to a plan.">
-            This is the path we want every campus partner to be able to walk. It is a design, not a claim that the rooms are open.
-          </SectionHeading>
+          <SectionHeading eyebrow="How care should move" title="From a student, to a person, to a plan." />
           <div className="relative mt-10 grid gap-4 md:grid-cols-4">
             <div className="absolute left-0 right-0 top-8 hidden h-px bg-evergreen-200 md:block" aria-hidden="true" />
             {careSteps.map((step, index) => (
@@ -63,31 +86,20 @@ export default function About() {
       </section>
 
       <section className="container-page py-16">
-        <SectionHeading eyebrow="Values" title="Hover a card. The short version is on the front.">
-          These are working values for a young organization. The board can revise them. They are not a brand exercise detached from the mission.
-        </SectionHeading>
+        <SectionHeading eyebrow="Values" title="Each value, and what it asks of us." />
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {values.map((value) => (
-            <div key={value.title} className="group h-56 [perspective:1000px]">
-              <div className="relative h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus-within:[transform:rotateY(180deg)]">
-                <div className="absolute inset-0 flex flex-col justify-between rounded-3xl bg-evergreen-800 p-6 text-white [backface-visibility:hidden]">
-                  <h3 className="font-display text-2xl font-semibold">{value.title}</h3>
-                  <p className="text-sm leading-relaxed text-evergreen-50">{value.front}</p>
-                </div>
-                <div className="absolute inset-0 rounded-3xl border border-evergreen-100 bg-white p-6 [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                  <h3 className="font-display text-lg font-semibold text-evergreen-900">{value.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-evergreen-800">{value.back}</p>
-                </div>
-              </div>
-            </div>
+            <article key={value.title} className="card flex h-full flex-col p-6">
+              <h3 className="font-display text-2xl font-semibold">{value.title}</h3>
+              <p className="mt-3 text-sm font-medium leading-relaxed text-evergreen-900">{value.front}</p>
+              <p className="mt-3 text-sm leading-relaxed text-evergreen-800">{value.back}</p>
+            </article>
           ))}
         </div>
       </section>
 
       <section className="container-page py-16">
-        <SectionHeading eyebrow="People" title="The board is not named yet.">
-          Seats are shown so the structure is visible. No names are invented here. Photos and biographies will replace these cards when the family is ready.
-        </SectionHeading>
+        <SectionHeading eyebrow="People" title="The board is not named yet." />
         <PlaceholderNote>Board names, headshots, and bios.</PlaceholderNote>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {boardSeats.map((seat) => (
