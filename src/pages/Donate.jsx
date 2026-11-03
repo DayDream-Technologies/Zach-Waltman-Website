@@ -6,6 +6,7 @@ import PageHero from '../components/PageHero.jsx';
 import PlaceholderNote from '../components/PlaceholderNote.jsx';
 import usePageTitle from '../hooks/usePageTitle.js';
 import { designations, impactForAmount, site } from '../data/site.js';
+import { publicUrl } from '../lib/publicUrl.js';
 import {
   FEE_FIXED_CENTS,
   FEE_RATE,
@@ -104,6 +105,13 @@ export default function Donate() {
       </PageHero>
 
       <section className="container-page py-12">
+        <img
+          src={publicUrl('Images/friends.jpg')}
+          alt="Zach with a group of friends outside a house"
+          width={1206}
+          height={904}
+          className="mb-8 aspect-[4/3] w-full rounded-3xl object-cover shadow-card"
+        />
         {succeeded ? (
           <p className="mb-6 rounded-2xl bg-evergreen-800 px-5 py-4 text-sm text-white" role="status">
             Thank you. If the payment finished, the foundation’s acknowledgment will come from its own email, separate from any receipt Stripe sends. If you closed the window early, no gift was recorded as paid.

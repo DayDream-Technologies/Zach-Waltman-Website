@@ -40,9 +40,6 @@ const photos = [
   { src: 'Images/suit.jpg', alt: 'Zach jumping in a white tuxedo at a celebration', aspect: 'aspect-[3/4]' },
   { src: 'Images/Hockey.jpg', alt: 'Zach as a boy in a Wilmette hockey jersey', aspect: 'aspect-[3/4]' },
   { src: 'Images/hockey(old).jpg', alt: 'Zach with his Loyola Academy hockey team, wearing number 84', aspect: 'aspect-[3/2] col-span-2' },
-  { src: 'Images/friends.jpg', alt: 'Zach with a group of friends outside a house', aspect: 'aspect-[3/2] col-span-2' },
-  { src: 'Images/family1.jpg', alt: 'Zach with his family at a graduation', aspect: 'aspect-[4/3] col-span-2' },
-  { src: 'Images/family2.jpg', alt: 'Zach with his family by the ocean', aspect: 'aspect-[4/3] col-span-2' },
 ];
 
 export default function ZachsStory() {

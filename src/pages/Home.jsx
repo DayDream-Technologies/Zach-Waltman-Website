@@ -127,6 +127,20 @@ export default function Home() {
               </Link>
             </article>
           </Reveal>
+          <img
+            src={publicUrl('Images/family1.jpg')}
+            alt="Zach with his family at a graduation"
+            width={2048}
+            height={1536}
+            className="aspect-[4/3] w-full rounded-3xl object-cover shadow-card"
+          />
+          <img
+            src={publicUrl('Images/family2.jpg')}
+            alt="Zach with his family by the ocean"
+            width={2048}
+            height={1536}
+            className="aspect-[4/3] w-full rounded-3xl object-cover shadow-card"
+          />
         </div>
       </section>
 
