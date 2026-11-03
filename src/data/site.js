@@ -8,8 +8,6 @@ export const site = {
     'We are in the process of launching the first site at Michigan State University. This website is currently here to bring awareness, support fundraising, and help us bring this mission forward.',
   vision:
     'The Zach Waltman Foundation intends to establish 24/7 fully staffed on-campus safe spaces for students. We aspire to create a more responsive and compassionate system of providing care and access for students seeking mental health support. Through collaboration, advocacy, and education, we will strengthen coordination among campus services and health care providers, ensuring that every young person is seen, heard, supported, and connected to the care they need.',
-  gofundme:
-    'https://www.gofundme.com/f/zach-waltman-mental-health-crisis-campus-suicide-prevention',
   email: 'ZachWaltmanFoundation@gmail.com',
   phone: null,
 };

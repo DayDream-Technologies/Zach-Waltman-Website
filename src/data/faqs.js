@@ -11,7 +11,7 @@ export const faqs = [
   },
   {
     q: 'Is the foundation a 501(c)(3)?',
-    a: 'The foundation’s EIN is 42-5220430. Status as a 501(c)(3) is still being confirmed. Do not assume a gift is deductible until that status is stated on an acknowledgment. Gifts made through the family’s GoFundMe are processed by GoFundMe under that campaign’s terms. Card gifts on this site are not turned on until Stripe and a proper acknowledgment letter are in place. This page is not tax advice.',
+    a: 'The foundation’s EIN is 42-5220430. Status as a 501(c)(3) is still being confirmed. Do not assume a gift is deductible until that status is stated on an acknowledgment. This page is not tax advice.',
   },
   {
     q: 'Where does a donation go?',

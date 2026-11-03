@@ -52,16 +52,6 @@ export default function Footer() {
                 988lifeline.org
               </a>
             </li>
-            <li>
-              <a
-                className="flex min-h-11 items-center hover:text-white"
-                href={site.gofundme}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Family GoFundMe
-              </a>
-            </li>
             {!visible ? (
               <li>
                 <button type="button" className="flex min-h-11 items-center underline decoration-evergreen-400 underline-offset-2 hover:text-white" onClick={recall}>
