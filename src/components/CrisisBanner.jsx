@@ -8,9 +8,9 @@ export default function CrisisBanner() {
 
   return (
     <div className="bg-evergreen-950 text-cream" role="region" aria-label="Crisis help">
-      <div className="container-page flex items-start gap-3 py-3 sm:items-center">
-        <Phone className="mt-0.5 h-4 w-4 shrink-0 text-evergreen-200" aria-hidden="true" />
-        <p className="flex-1 text-sm leading-relaxed text-evergreen-50">
+      <div className="container-page flex items-start gap-3 py-4 sm:items-center">
+        <Phone className="mt-0.5 h-5 w-5 shrink-0 text-evergreen-200" aria-hidden="true" />
+        <p className="flex-1 text-base leading-relaxed text-evergreen-50">
           <span className="font-semibold text-white">Need help now?</span>{' '}
           Call or text{' '}
           <a className="inline-flex min-h-11 min-w-11 items-center justify-center px-1 underline decoration-evergreen-300 underline-offset-2" href="tel:988">988</a>

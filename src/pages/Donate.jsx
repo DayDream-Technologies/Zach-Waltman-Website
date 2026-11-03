@@ -263,7 +263,7 @@ export default function Donate() {
               <PlaceholderNote>Impact lines are illustrative, not a budget.</PlaceholderNote>
             </div>
             <p className="px-1 text-xs leading-relaxed text-evergreen-600">
-              Tax status and the EIN are not published yet. Do not assume a gift is deductible until the foundation states that it is a 501(c)(3) and puts the EIN on the acknowledgment. This is not tax advice.
+              The foundation’s EIN is 42-5220430. Do not assume a gift is deductible until the foundation states that it is a 501(c)(3) on the acknowledgment. This is not tax advice.
             </p>
           </aside>
         </div>

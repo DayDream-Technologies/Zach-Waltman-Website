@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Clock, HeartHandshake, Phone } from 'lucide-react';
 import Reveal from '../components/Reveal.jsx';
+import SubscribeForm from '../components/SubscribeForm.jsx';
 import usePageTitle from '../hooks/usePageTitle.js';
 import { events } from '../data/events.js';
 import { pillars, site } from '../data/site.js';
@@ -39,10 +40,6 @@ export default function Home() {
               {site.mission} {site.now}
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <a href="tel:988" className="btn-primary px-8 py-4 text-lg">
-                <Phone className="h-5 w-5" />
-                Need help now
-              </a>
               <Link to="/donate" className="btn-secondary">
                 Donate
                 <ArrowRight className="h-4 w-4" />
@@ -103,7 +100,7 @@ export default function Home() {
           <Reveal>
             <article className="card h-full p-8">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-evergreen-600">Zach’s story</p>
-              <h2 className="mt-3 font-display text-3xl font-semibold">A brother, a teammate, a friend.</h2>
+              <h2 className="mt-3 font-display text-3xl font-semibold">A brother, a son, a teammate, a friend.</h2>
               <p className="mt-4 leading-relaxed text-evergreen-800">
                 Zach Waltman grew up in Wilmette, played hockey at Loyola Academy, and studied finance at Michigan State. Our family is building this foundation so another student has somewhere to turn.
               </p>
@@ -147,6 +144,12 @@ export default function Home() {
               Get involved
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-16">
+        <div className="container-page">
+          <SubscribeForm id="home-updates" />
         </div>
       </section>
     </>

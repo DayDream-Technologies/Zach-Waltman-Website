@@ -1,12 +1,14 @@
-import { motion } from 'framer-motion';
 import Accordion from '../components/Accordion.jsx';
 import PageHero from '../components/PageHero.jsx';
-import PlaceholderNote from '../components/PlaceholderNote.jsx';
-import Reveal from '../components/Reveal.jsx';
 import SectionHeading from '../components/SectionHeading.jsx';
 import usePageTitle from '../hooks/usePageTitle.js';
 import { faqs } from '../data/faqs.js';
-import { boardSeats, careSteps, site, values } from '../data/site.js';
+import { site } from '../data/site.js';
+// Commented out with How care should move, Values, and People. Restore with those sections.
+// import { motion } from 'framer-motion';
+// import PlaceholderNote from '../components/PlaceholderNote.jsx';
+// import Reveal from '../components/Reveal.jsx';
+// import { boardSeats, careSteps, values } from '../data/site.js';
 
 /*
   Introductions removed from the page. Put them back under the matching headings when ready.
@@ -42,6 +44,13 @@ export default function About() {
         </article>
       </section>
 
+      <section className="container-page pb-16">
+        <h2 className="font-display text-3xl font-semibold text-evergreen-900">Partnerships</h2>
+        <p className="mt-4 max-w-3xl leading-relaxed text-evergreen-800">
+          This foundation is in collaboration with Michigan State University. The first site is being launched there with Counseling and Psychological Services (CAPS), the university’s counseling office. We also work with Cognition Daily, which helps students and families find local care. The goal is to expand this model from Michigan State to campuses across the country.
+        </p>
+      </section>
+
       <section className="container-page pb-4">
         <h2 className="font-display text-3xl font-semibold text-evergreen-900">Why this work is urgent</h2>
         <p className="mt-4 max-w-3xl leading-relaxed text-evergreen-800">
@@ -58,6 +67,9 @@ export default function About() {
           </a>
         </p>
       </section>
+
+      {/*
+        How care should move, Values, and People. Restore these sections, and the imports above, when ready.
 
       <section className="bg-white py-16">
         <div className="container-page">
@@ -113,6 +125,7 @@ export default function About() {
           ))}
         </div>
       </section>
+      */}
 
       <section className="bg-white py-16">
         <div className="container-page">

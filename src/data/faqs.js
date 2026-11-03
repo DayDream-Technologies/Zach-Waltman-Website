@@ -11,7 +11,7 @@ export const faqs = [
   },
   {
     q: 'Is the foundation a 501(c)(3)?',
-    a: 'Status is still being confirmed. Until the IRS assigns a number, the EIN on this page is a placeholder: XX-XXXXXXX. Do not use it on a tax return. Gifts made through the family’s GoFundMe are processed by GoFundMe under that campaign’s terms. Card gifts on this site are not turned on until Stripe, the real EIN, and a proper acknowledgment letter are in place. This page is not tax advice.',
+    a: 'The foundation’s EIN is 42-5220430. Status as a 501(c)(3) is still being confirmed. Do not assume a gift is deductible until that status is stated on an acknowledgment. Gifts made through the family’s GoFundMe are processed by GoFundMe under that campaign’s terms. Card gifts on this site are not turned on until Stripe and a proper acknowledgment letter are in place. This page is not tax advice.',
   },
   {
     q: 'Where does a donation go?',
@@ -19,7 +19,7 @@ export const faqs = [
   },
   {
     q: 'Can my campus partner with you?',
-    a: `Yes, that is the work. Use the Get Involved page to tell us who you are. The form on this site does not send yet, so if you need a reply now, email the family at ${site.email}.`,
+    a: `Yes, that is the work. Use the Get Involved page to tell us who you are. That note is emailed to ${site.email}.`,
   },
 ];
 
