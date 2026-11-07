@@ -35,7 +35,7 @@ export default function Donate() {
 
   return (
     <>
-      <PageHero eyebrow="Donate" title="A gift toward care a student can reach tonight." />
+      <PageHero eyebrow="Donate" title="With your gift, we can build a place where every student in crisis finds safety and support." />
 
       <section className="container-page py-12">
         <img

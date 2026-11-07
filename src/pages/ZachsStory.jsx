@@ -37,9 +37,14 @@ const obituary = [
 ];
 
 const photos = [
-  { src: 'Images/suit.jpg', alt: 'Zach jumping in a white tuxedo at a celebration', aspect: 'aspect-[3/4]' },
-  { src: 'Images/Hockey.jpg', alt: 'Zach as a boy in a Wilmette hockey jersey', aspect: 'aspect-[3/4]' },
-  { src: 'Images/hockey(old).jpg', alt: 'Zach with his Loyola Academy hockey team, wearing number 84', aspect: 'aspect-[3/2] col-span-2' },
+  { src: 'Images/linkedin.jpg', alt: 'Zach in a suit and tie', aspect: 'aspect-[3/4] object-[center_62%]' },
+  { src: 'Images/portrait.jpg', alt: 'Zach in a brown sweater', aspect: 'aspect-[3/4] object-center' },
+  { src: 'Images/suit.jpg', alt: 'Zach jumping in a white tuxedo at a celebration', aspect: 'aspect-[3/4] object-top' },
+  { src: 'Images/Hockey.jpg', alt: 'Zach as a boy in a Wilmette hockey jersey', aspect: 'aspect-[3/4] object-top' },
+  { src: 'Images/family1.jpg', alt: 'Zach with his family at a graduation', aspect: 'aspect-[4/3] object-center col-span-2 lg:col-span-2' },
+  { src: 'Images/family2.jpg', alt: 'Zach with his family by the ocean', aspect: 'aspect-[4/3] object-center col-span-2 lg:col-span-2' },
+  { src: 'Images/friends.jpg', alt: 'Zach with a group of friends outside a house', aspect: 'aspect-[4/3] object-center col-span-2 lg:col-span-2' },
+  { src: 'Images/hockey(old).jpg', alt: 'Zach with his Loyola Academy hockey team, wearing number 84', aspect: 'aspect-[3/2] object-center col-span-2 lg:col-span-2' },
 ];
 
 export default function ZachsStory() {
@@ -84,9 +89,7 @@ export default function ZachsStory() {
 
   return (
     <>
-      <PageHero eyebrow="Zach’s story" title="Remembered for the way he showed up.">
-        <p>This is Zach’s story, in his family’s words.</p>
-      </PageHero>
+      <PageHero title="Zach’s Story" />
 
       <section className="container-page py-16">
         <div className="mx-auto max-w-3xl space-y-5 leading-relaxed text-evergreen-800">
@@ -114,26 +117,17 @@ export default function ZachsStory() {
       <section className="bg-white py-16">
         <div className="container-page">
           <h2 className="font-display text-3xl font-semibold">Photographs</h2>
-          <div className="mt-8 grid gap-4 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-            <img
-              src={publicUrl('Images/portrait.jpg')}
-              alt="Zach smiling, indoors"
-              width={1200}
-              height={1500}
-              className="aspect-[4/5] w-full rounded-3xl object-cover shadow-card"
-            />
-            <div className="grid grid-cols-2 gap-4">
-              {photos.map((photo) => (
-                <img
-                  key={photo.src}
-                  src={publicUrl(photo.src)}
-                  alt={photo.alt}
-                  width={800}
-                  height={1000}
-                  className={`${photo.aspect} w-full rounded-3xl object-cover object-top shadow-card`}
-                />
-              ))}
-            </div>
+          <div className="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
+            {photos.map((photo) => (
+              <img
+                key={photo.src}
+                src={publicUrl(photo.src)}
+                alt={photo.alt}
+                width={1200}
+                height={1500}
+                className={`${photo.aspect} w-full rounded-3xl object-cover shadow-card`}
+              />
+            ))}
           </div>
         </div>
       </section>

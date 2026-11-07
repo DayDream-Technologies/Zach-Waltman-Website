@@ -127,20 +127,29 @@ export default function Home() {
               </Link>
             </article>
           </Reveal>
-          <img
-            src={publicUrl('Images/family1.jpg')}
-            alt="Zach with his family at a graduation"
-            width={2048}
-            height={1536}
-            className="aspect-[4/3] w-full rounded-3xl object-cover shadow-card"
-          />
-          <img
-            src={publicUrl('Images/family2.jpg')}
-            alt="Zach with his family by the ocean"
-            width={2048}
-            height={1536}
-            className="aspect-[4/3] w-full rounded-3xl object-cover shadow-card"
-          />
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:col-span-2">
+            <img
+              src={publicUrl('Images/portrait.jpg')}
+              alt="Zach in a brown sweater"
+              width={1200}
+              height={1500}
+              className="aspect-[3/4] w-full rounded-3xl object-cover object-center shadow-card"
+            />
+            <img
+              src={publicUrl('Images/Hockey.jpg')}
+              alt="Zach as a boy in a Wilmette hockey jersey"
+              width={1200}
+              height={1500}
+              className="aspect-[3/4] w-full rounded-3xl object-cover object-top shadow-card"
+            />
+            <img
+              src={publicUrl('Images/linkedin.jpg')}
+              alt="Zach in a suit and tie"
+              width={1200}
+              height={1500}
+              className="aspect-[3/4] w-full rounded-3xl object-cover object-[center_62%] shadow-card"
+            />
+          </div>
         </div>
       </section>
 
